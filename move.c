@@ -115,3 +115,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 }
 
 // Run: gcc -o move move.c -lgdi32; ./move.exe
+
+// AT&T: gcc -S move.c
+
+// Intel: gcc -m32 -S -masm=intel move.c
