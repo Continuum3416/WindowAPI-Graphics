@@ -4,7 +4,7 @@
 int squareX = 50;
 int squareY = 50;
 const int squareSize = 20;
-const int moveStep = 10;
+const int moveStep = 20;
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
@@ -85,6 +85,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     wc.lpszMenuName = NULL;
     wc.lpszClassName = "MyWindow";
     wc.hIconSm = LoadIcon(NULL, IDI_APPLICATION);
+    wc.hbrBackground = CreateSolidBrush(RGB(200, 200, 255)); // Light blue
     
     if (!RegisterClassEx(&wc))
     {
@@ -114,7 +115,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     return (int)msg.wParam;
 }
 
-// Run: gcc -o move move.c -lgdi32; ./move.exe
+// Run: gcc -o bin/move.exe move.c -lgdi32; ./bin/move.exe
 
 // AT&T: gcc -S move.c
 
